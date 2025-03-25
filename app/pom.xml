@@ -132,6 +132,13 @@
 			<artifactId>commons-collections4</artifactId>
 			<version>4.0</version>
 		</dependency>
+		</dependency>
+		<!-- Datadog Java Agent API -->
+		<dependency>
+        		<groupId>com.datadoghq</groupId>
+        		<artifactId>dd-trace-api</artifactId>
+        		<version>1.46.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -140,6 +147,10 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<agents>/app/dd-java-agent.jar</agents>
+					<arguments>-Ddd.logs.injection=true -Ddd.profiling.enabled=true</arguments>
+				</configuration>
 			</plugin>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
