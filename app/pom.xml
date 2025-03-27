@@ -132,7 +132,6 @@
 			<artifactId>commons-collections4</artifactId>
 			<version>4.0</version>
 		</dependency>
-		</dependency>
 		<!-- Datadog Java Agent API -->
 		<dependency>
         		<groupId>com.datadoghq</groupId>
